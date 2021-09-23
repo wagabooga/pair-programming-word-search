@@ -35,4 +35,40 @@ describe("#wordSearch()", function() {
 
     assert.isTrue(result);
   });
+
+  it("should return true if the word is present vertically", function() {
+    const result = wordSearch([
+      ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['S', 'E', 'I', 'N', 'F', 'E', 'L', 'D'],
+      ['Y', 'F', 'C', 'F', 'H', 'U', 'A', 'L'],
+      ['H', 'M', 'J', 'T', 'E', 'V', 'R', 'G'],
+      ['W', 'H', 'C', 'S', 'L', 'E', 'R', 'L'],
+      ['B', 'F', 'R', 'E', 'L', 'E', 'Y', 'B'],
+      ['U', 'B', 'T', 'W', 'O', 'P', 'A', 'I'],
+      ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], 'HELLO')
+
+    assert.isTrue(result);
+  });
+  it("should return false if an empty array ", function() {
+    const result = wordSearch([], 'ahoy')
+    assert.isFalse(result);
+  });
+
+  it("should return false if the word is not defined", function() {
+    const result = wordSearch([
+      ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['S', 'E', 'I', 'N', 'F', 'E', 'L', 'D'],
+      ['Y', 'F', 'C', 'F', 'H', 'U', 'A', 'L'],
+      ['H', 'M', 'J', 'T', 'E', 'V', 'R', 'G'],
+      ['W', 'H', 'C', 'S', 'L', 'E', 'R', 'L'],
+      ['B', 'F', 'R', 'E', 'L', 'E', 'Y', 'B'],
+      ['U', 'B', 'T', 'W', 'O', 'P', 'A', 'I'],
+      ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], )
+
+    assert.isFalse(result);
+  });
 });
